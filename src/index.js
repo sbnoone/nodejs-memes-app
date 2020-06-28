@@ -81,7 +81,7 @@ async function start() {
          useFindAndModify: false,
       })
 
-      app.listen(PORT, () => {
+      app.listen(process.env.PORT || PORT, () => {
          console.log(`Server running on port ${PORT}`)
       })
    } catch (e) {
