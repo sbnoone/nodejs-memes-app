@@ -1,0 +1,32 @@
+{{#if memes.length}}
+{{#each memes}}
+<div class="row">
+   <div class="col s8 offset-s2">
+      <div class="card">
+         <div class="card-image">
+            <img src='{{image}}' alt='{{title}}'>
+         </div>
+         <div class="card-content flex f-sb">
+            <p class="center-align">{{title}}</p>
+            <p class="date">{{createdAt}}</p>
+         </div>
+         <div class="card-action right-align flex flex-end">
+            {{#if @root.isAuth}}
+            <form action="/memes/favorite/add" method="POST">
+               <input type="hidden" name="_csrf" value="{{@root.csrf}}">
+               <input type="hidden" name="id" value="{{_id}}">
+               <button type="submit" class="btn btn-primary btn-small">В избранное</button>
+            </form>
+            {{#isEqual userId._id @root.userId}}
+            <a class="btn btn-small btn-primary" href="/memes/{{_id}}/edit">Редактировать</a>
+            {{/isEqual}}
+            {{/if}}
+            <a class="btn btn-small btn-primary" href="/memes/{{_id}}">Открыть</a>
+         </div>
+      </div>
+   </div>
+</div>
+{{/each}}
+{{else}}
+<p>Мемов пока нет</p>
+{{/if}}

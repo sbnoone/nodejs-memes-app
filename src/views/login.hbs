@@ -1,0 +1,77 @@
+<div class="row">
+   <div class="col s6 offset-s3">
+      <ul class="tabs ">
+         <li class="tab col s6"><a href="#login">Войти</a></li>
+         <li class="tab col s6"><a href="#register">Регистрация</a></li>
+      </ul>
+   </div>
+   <div id="login" class="col s6 offset-s3">
+      <h1>Войти</h1>
+
+      {{#if loginError}}
+      <p class="alert">{{loginError}}</p>
+      {{/if}}
+
+      <form action="/auth/login" method="POST" novalidate>
+         <div class="input-field ">
+            <input id="email" type="email" class="validate" name="email">
+            <label for="email">Email</label>
+            <span class="helper-text" data-error="Введите email" data-success="right"></span>
+         </div>
+
+         <div class="input-field">
+            <input id="password" type="password" class="validate" name="password">
+            <label for="password">Пароль</label>
+            <span class="helper-text" data-error="Введите пароль" data-success="right"></span>
+         </div>
+
+         <input type="hidden" name="_csrf" value="{{csrf}}">
+
+
+         <button class="waves-effect waves-light btn">Войти</button>
+         <p><a href="/auth/reset">Забыли пароль?</a></p>
+      </form>
+
+   </div>
+   <div id="register" class="col s6 offset-s3">
+
+      <h1>Создать аккаунт</h1>
+
+      {{#if registerError}}
+      <p class="alert">{{registerError}}</p>
+      {{/if}}
+
+
+      <form action="/auth/register" method="POST" novalidate>
+         <div class="input-field">
+            <label for="remail">Email</label>
+            <input id="remail" type="email" class="validate" name="email" novalidate>
+            <span class="helper-text" data-error="Введите email" data-success="right"></span>
+         </div>
+
+         <div class="input-field">
+            <label for="rpassword">Пароль</label>
+            <input id="rpassword" type="password" class="validate" name="password">
+            <span class="helper-text" data-error="Введите пароль" data-success="right"></span>
+         </div>
+
+         <div class="input-field">
+            <label for="rpassword2">Повторите пароль</label>
+            <input id="rpassword2" type="password" class="validate" name="passwordConfirmation">
+            <span class="helper-text" data-error="Введите пароль" data-success="right"></span>
+         </div>
+
+         <div class="input-field">
+            <label for="name">Имя</label>
+            <input id="name" type="text" class="validate" name="name">
+            <span class="helper-text" data-error="Введите имя" data-success=""></span>
+         </div>
+
+         <input type="hidden" name="_csrf" value="{{csrf}}">
+
+         <button class="waves-effect waves-light btn">Регистрация</button>
+
+
+      </form>
+   </div>
+</div>

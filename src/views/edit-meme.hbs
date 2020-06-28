@@ -1,0 +1,30 @@
+<h2>Редактировать {{meme.title}}</h2>
+{{#if error}}
+<p class="alert">{{error}}</p>
+{{/if}}
+<form action="/memes/edit" method="POST" class="edit-form">
+   <div class="input-field ">
+      <input value="{{meme.title}}" id="text" type="text" name="title" class="validate">
+      <label for="text">Название</label>
+      <span class="helper-text" data-error="Введите название" data-success=""></span>
+   </div>
+
+   <div class="input-field">
+      <input value="{{meme.image}}" id="url" type="text" name="image" class="validate">
+      <label for="url">URL картинки</label>
+      <span class="helper-text" data-error="Введите URL" data-success=""></span>
+   </div>
+
+   <input type="hidden" name="id" value='{{meme.id}}'>
+   <input type="hidden" name="_csrf" value="{{csrf}}">
+
+   <div>
+      <button class="waves-effect waves-light btn">Сохранить</button>
+   </div>
+</form>
+
+<form action="/memes/remove" method="POST" class="remove-form">
+   <input type="hidden" name="_csrf" value="{{csrf}}">
+   <input type="hidden" name="id" value="{{meme.id}}">
+   <button type="submit" class="waves-effect waves-light btn red">Удалить</button>
+</form>

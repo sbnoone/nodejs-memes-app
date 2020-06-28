@@ -1,0 +1,25 @@
+<h1>Добавить новый мем</h1>
+
+{{#if error}}
+<p class="alert">{{error}}</p>
+{{/if}}
+
+<form action="/add" method="POST" novalidate>
+   <div class="input-field ">
+      <input id="text" type="text" name="title" value="{{data.title}}" class="validate">
+      <label for="text">Название</label>
+      <span class="helper-text" data-error="Введите название" data-success=""></span>
+   </div>
+
+   <div class="input-field">
+      <input id="url" type="text" name="image" value="{{data.image}}" class=" validate">
+      <label for="url">URL картинки</label>
+      <span class="helper-text" data-error="Введите пароль" data-success=""></span>
+   </div>
+
+   <input type="hidden" name="_csrf" value="{{csrf}}">
+
+   <div>
+      <button class="waves-effect waves-light btn">Добавить</button>
+   </div>
+</form>
