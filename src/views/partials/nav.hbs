@@ -1,15 +1,15 @@
 <nav>
    <div class="nav-wrapper">
-      <a href="/" class="brand-logo ml-2">Logo</a>
+      <a href="/" class="brand-logo ml-2">Memes App</a>
       <ul id="nav-mobile" class="right hide-on-small-only ">
 
 
          {{#if isAuth}}
 
-         {{#if isHome}}
-         <li class="active"><a href="/">Главная</a></li>
+         {{#if isMemes}}
+         <li class="active"><a href="/">Мемы</a></li>
          {{else}}
-         <li><a href="/">Главная</a></li>
+         <li><a href="/">Мемы</a></li>
          {{/if}}
 
          {{#if isProfile}}
@@ -18,16 +18,10 @@
          <li><a href="/profile">Профиль</a></li>
          {{/if}}
 
-         {{#if isMemes}}
-         <li class="active"><a href="/memes">Мемы</a></li>
-         {{else}}
-         <li><a href="/memes">Мемы</a></li>
-         {{/if}}
-
          {{#if isFavorite}}
-         <li class="active"><a href="/memes/favorite">Избранное</a></li>
+         <li class="active"><a href="/favorite">Избранное</a></li>
          {{else}}
-         <li><a href="/memes/favorite">Избранное</a></li>
+         <li><a href="/favorite">Избранное</a></li>
          {{/if}}
 
          {{#if isAdd}}
@@ -40,16 +34,10 @@
 
          {{else}}
 
-         {{#if isHome}}
-         <li class="active"><a href="/">Главная</a></li>
-         {{else}}
-         <li><a href="/">Главная</a></li>
-         {{/if}}
-
          {{#if isMemes}}
-         <li class="active"><a href="/memes">Мемы</a></li>
+         <li class="active"><a href="/">Мемы</a></li>
          {{else}}
-         <li><a href="/memes">Мемы</a></li>
+         <li><a href="/">Мемы</a></li>
          {{/if}}
 
          {{#if isLogin}}

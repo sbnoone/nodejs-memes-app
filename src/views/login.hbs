@@ -16,17 +16,16 @@
          <div class="input-field ">
             <input id="email" type="email" class="validate" name="email">
             <label for="email">Email</label>
-            <span class="helper-text" data-error="Введите email" data-success="right"></span>
+            <span class="helper-text" data-error="Введите email"></span>
          </div>
 
          <div class="input-field">
             <input id="password" type="password" class="validate" name="password">
             <label for="password">Пароль</label>
-            <span class="helper-text" data-error="Введите пароль" data-success="right"></span>
+            <span class="helper-text" data-error="Введите пароль"></span>
          </div>
 
          <input type="hidden" name="_csrf" value="{{csrf}}">
-
 
          <button class="waves-effect waves-light btn">Войти</button>
          <p><a href="/auth/reset">Забыли пароль?</a></p>
@@ -41,30 +40,29 @@
       <p class="alert">{{registerError}}</p>
       {{/if}}
 
-
       <form action="/auth/register" method="POST" novalidate>
          <div class="input-field">
             <label for="remail">Email</label>
             <input id="remail" type="email" class="validate" name="email" novalidate>
-            <span class="helper-text" data-error="Введите email" data-success="right"></span>
+            <span class="helper-text" data-error="Введите email"></span>
          </div>
 
          <div class="input-field">
             <label for="rpassword">Пароль</label>
             <input id="rpassword" type="password" class="validate" name="password">
-            <span class="helper-text" data-error="Введите пароль" data-success="right"></span>
+            <span class="helper-text" data-error="Введите пароль" ></span>
          </div>
 
          <div class="input-field">
             <label for="rpassword2">Повторите пароль</label>
             <input id="rpassword2" type="password" class="validate" name="passwordConfirmation">
-            <span class="helper-text" data-error="Введите пароль" data-success="right"></span>
+            <span class="helper-text" data-error="Пароли должны совпадать"></span>
          </div>
 
          <div class="input-field">
             <label for="name">Имя</label>
             <input id="name" type="text" class="validate" name="name">
-            <span class="helper-text" data-error="Введите имя" data-success=""></span>
+            <span class="helper-text" data-error="Введите имя"></span>
          </div>
 
          <input type="hidden" name="_csrf" value="{{csrf}}">
