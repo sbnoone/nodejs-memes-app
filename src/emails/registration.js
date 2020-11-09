@@ -6,10 +6,10 @@ module.exports = function (email) {
     from: keys.EMAIL_FROM,
     subject: 'Аккаунт создан',
     html: `
-         <h1>Добро пожаловать в наш магазин</h1>
+         <h1>Добро пожаловать!</h1>
          <p>Вы успешно создали аккаунт с email - ${email}</p>
          <hr/>
-         <a href='${keys.BASE_URL}'>Мемасы</a>
+         <a href='${keys.BASE_URL}'>На главную</a>
       `,
   }
 }
